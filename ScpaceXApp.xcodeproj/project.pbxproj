@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		214B624D26D1ACC2009DF7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B624C26D1ACC2009DF7C1 /* AppDelegate.swift */; };
 		214B624F26D1ACC2009DF7C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B624E26D1ACC2009DF7C1 /* SceneDelegate.swift */; };
-		214B625126D1ACC2009DF7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B625026D1ACC2009DF7C1 /* ViewController.swift */; };
-		214B625426D1ACC2009DF7C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B625226D1ACC2009DF7C1 /* Main.storyboard */; };
 		214B625626D1ACC3009DF7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214B625526D1ACC3009DF7C1 /* Assets.xcassets */; };
 		214B625926D1ACC3009DF7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214B625726D1ACC3009DF7C1 /* LaunchScreen.storyboard */; };
 		214B626426D1ACC4009DF7C1 /* ScpaceXAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214B626326D1ACC4009DF7C1 /* ScpaceXAppTests.swift */; };
@@ -38,8 +36,6 @@
 		214B624926D1ACC2009DF7C1 /* ScpaceXApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScpaceXApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214B624C26D1ACC2009DF7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		214B624E26D1ACC2009DF7C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		214B625026D1ACC2009DF7C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		214B625326D1ACC2009DF7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		214B625526D1ACC3009DF7C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214B625826D1ACC3009DF7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		214B625A26D1ACC4009DF7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +95,9 @@
 		214B624B26D1ACC2009DF7C1 /* ScpaceXApp */ = {
 			isa = PBXGroup;
 			children = (
-				214B624C26D1ACC2009DF7C1 /* AppDelegate.swift */,
-				214B624E26D1ACC2009DF7C1 /* SceneDelegate.swift */,
-				214B625026D1ACC2009DF7C1 /* ViewController.swift */,
-				214B625226D1ACC2009DF7C1 /* Main.storyboard */,
-				214B625526D1ACC3009DF7C1 /* Assets.xcassets */,
-				214B625726D1ACC3009DF7C1 /* LaunchScreen.storyboard */,
-				214B625A26D1ACC4009DF7C1 /* Info.plist */,
+				214B628126D1B48B009DF7C1 /* App */,
+				214B628026D1B480009DF7C1 /* AppConfiguration */,
+				214B627F26D1B477009DF7C1 /* Assets */,
 			);
 			path = ScpaceXApp;
 			sourceTree = "<group>";
@@ -126,6 +118,32 @@
 				214B627026D1ACC4009DF7C1 /* Info.plist */,
 			);
 			path = ScpaceXAppUITests;
+			sourceTree = "<group>";
+		};
+		214B627F26D1B477009DF7C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				214B625A26D1ACC4009DF7C1 /* Info.plist */,
+				214B625526D1ACC3009DF7C1 /* Assets.xcassets */,
+				214B625726D1ACC3009DF7C1 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		214B628026D1B480009DF7C1 /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				214B624C26D1ACC2009DF7C1 /* AppDelegate.swift */,
+				214B624E26D1ACC2009DF7C1 /* SceneDelegate.swift */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		214B628126D1B48B009DF7C1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +251,6 @@
 			files = (
 				214B625926D1ACC3009DF7C1 /* LaunchScreen.storyboard in Resources */,
 				214B625626D1ACC3009DF7C1 /* Assets.xcassets in Resources */,
-				214B625426D1ACC2009DF7C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				214B625126D1ACC2009DF7C1 /* ViewController.swift in Sources */,
 				214B624D26D1ACC2009DF7C1 /* AppDelegate.swift in Sources */,
 				214B624F26D1ACC2009DF7C1 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +312,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		214B625226D1ACC2009DF7C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				214B625326D1ACC2009DF7C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		214B625726D1ACC3009DF7C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ScpaceXApp/Info.plist;
+				INFOPLIST_FILE = ScpaceXApp/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chauteco.ScpaceXApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ScpaceXApp/Info.plist;
+				INFOPLIST_FILE = ScpaceXApp/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = chauteco.ScpaceXApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
