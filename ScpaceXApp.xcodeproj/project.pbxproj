@@ -95,7 +95,6 @@
 		214B624B26D1ACC2009DF7C1 /* ScpaceXApp */ = {
 			isa = PBXGroup;
 			children = (
-				214B628126D1B48B009DF7C1 /* App */,
 				214B628026D1B480009DF7C1 /* AppConfiguration */,
 				214B627F26D1B477009DF7C1 /* Assets */,
 			);
@@ -137,13 +136,6 @@
 				214B624E26D1ACC2009DF7C1 /* SceneDelegate.swift */,
 			);
 			path = AppConfiguration;
-			sourceTree = "<group>";
-		};
-		214B628126D1B48B009DF7C1 /* App */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
