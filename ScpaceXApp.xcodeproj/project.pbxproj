@@ -20,6 +20,9 @@
 		21D9935726D1CA790039EDE9 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 21D9935626D1CA790039EDE9 /* ApolloCodegenLib */; };
 		21D993C526D1D8CE0039EDE9 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D993C426D1D8CE0039EDE9 /* schema.json */; };
 		21D993CA26D1D8ED0039EDE9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D993C926D1D8EC0039EDE9 /* API.swift */; };
+		21D993DF26D1DB2E0039EDE9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21D993DE26D1DB2E0039EDE9 /* RxSwift */; };
+		21D993E326D1DB2E0039EDE9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 21D993E226D1DB2E0039EDE9 /* RxCocoa */; };
+		21D993E526D1DB2E0039EDE9 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 21D993E426D1DB2E0039EDE9 /* RxBlocking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +64,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D993E526D1DB2E0039EDE9 /* RxBlocking in Frameworks */,
+				21D993DF26D1DB2E0039EDE9 /* RxSwift in Frameworks */,
 				21D9935726D1CA790039EDE9 /* ApolloCodegenLib in Frameworks */,
 				21D9934F26D1CA790039EDE9 /* ApolloAPI in Frameworks */,
 				21D9935526D1CA790039EDE9 /* ApolloWebSocket in Frameworks */,
 				21D9935326D1CA790039EDE9 /* Apollo in Frameworks */,
+				21D993E326D1DB2E0039EDE9 /* RxCocoa in Frameworks */,
 				21D9935126D1CA790039EDE9 /* ApolloUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +183,9 @@
 				21D9935226D1CA790039EDE9 /* Apollo */,
 				21D9935426D1CA790039EDE9 /* ApolloWebSocket */,
 				21D9935626D1CA790039EDE9 /* ApolloCodegenLib */,
+				21D993DE26D1DB2E0039EDE9 /* RxSwift */,
+				21D993E226D1DB2E0039EDE9 /* RxCocoa */,
+				21D993E426D1DB2E0039EDE9 /* RxBlocking */,
 			);
 			productName = ScpaceXApp;
 			productReference = 214B624926D1ACC2009DF7C1 /* ScpaceXApp.app */;
@@ -251,6 +260,7 @@
 			mainGroup = 214B624026D1ACC2009DF7C1;
 			packageReferences = (
 				21D9934D26D1CA790039EDE9 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				21D993DD26D1DB2E0039EDE9 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 214B624A26D1ACC2009DF7C1 /* Products */;
 			projectDirPath = "";
@@ -644,8 +654,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.47.1;
+				kind = exactVersion;
+				version = 0.47.1;
+			};
+		};
+		21D993DD26D1DB2E0039EDE9 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -675,6 +693,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21D9934D26D1CA790039EDE9 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloCodegenLib;
+		};
+		21D993DE26D1DB2E0039EDE9 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D993DD26D1DB2E0039EDE9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		21D993E226D1DB2E0039EDE9 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D993DD26D1DB2E0039EDE9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		21D993E426D1DB2E0039EDE9 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D993DD26D1DB2E0039EDE9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
