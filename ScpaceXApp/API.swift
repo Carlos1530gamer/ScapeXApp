@@ -13,6 +13,7 @@ public final class LaunchesQuery: GraphQLQuery {
         __typename
         id
         mission_name
+        mission_id
       }
     }
     """
@@ -58,6 +59,7 @@ public final class LaunchesQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("mission_name", type: .scalar(String.self)),
+          GraphQLField("mission_id", type: .list(.scalar(String.self))),
         ]
       }
 
@@ -67,8 +69,8 @@ public final class LaunchesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, missionName: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "mission_name": missionName])
+      public init(id: GraphQLID? = nil, missionName: String? = nil, missionId: [String?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "mission_name": missionName, "mission_id": missionId])
       }
 
       public var __typename: String {
@@ -95,6 +97,15 @@ public final class LaunchesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "mission_name")
+        }
+      }
+
+      public var missionId: [String?]? {
+        get {
+          return resultMap["mission_id"] as? [String?]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "mission_id")
         }
       }
     }
