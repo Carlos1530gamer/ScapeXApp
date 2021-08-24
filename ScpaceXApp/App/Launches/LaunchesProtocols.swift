@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol LaunchesInteractorProtocol {
-    func getLaunchesData() -> Single<[Launches]>
+    func getLaunchesData() -> Single<[Launch]>
 }
 
 protocol LaunchesPresenterProtocol: LaunchesViewInputAndOutputProtocol {
@@ -22,6 +22,7 @@ protocol LaunchesRouterProtocol {
 
 protocol LaunchesViewInputAndOutputProtocol {
     // MARK: - Input
+    var launches: Observable<[Launch]> { get }
     
     // MARK: - Output
     func viewDidLoad()

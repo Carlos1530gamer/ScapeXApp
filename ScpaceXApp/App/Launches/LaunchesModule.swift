@@ -10,12 +10,12 @@ import UIKit
 final class LaunchesModule {
     private let presenter: LaunchesPresenterProtocol
     
-    init(baseViewController: UIViewController,
+    init(window: UIWindow?,
          presenter: LaunchesPresenterProtocol? = nil) {
         if let presenter = presenter {
             self.presenter = presenter
         } else {
-            let router = LaunchesRouter(baseViewController: baseViewController)
+            let router = LaunchesRouter(window: window)
             let interactor = LaunchesInteractor()
             let presenter = LaunchesPresenter(interactor: interactor,
                                               router: router)

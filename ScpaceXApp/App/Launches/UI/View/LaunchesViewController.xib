@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchesViewController" customModule="ScpaceXApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="nsj-g5-CVa" id="ocX-Nh-s1O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

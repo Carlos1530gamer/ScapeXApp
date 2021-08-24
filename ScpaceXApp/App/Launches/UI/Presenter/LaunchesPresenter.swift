@@ -11,6 +11,7 @@ import RxSwift
 final class LaunchesPresenter: LaunchesPresenterProtocol {
     private let interactor: LaunchesInteractorProtocol
     private let router: LaunchesRouterProtocol
+    private let launchesSubject: PublishSubject<[Launch]> = PublishSubject()
     private let disposeBag = DisposeBag()
     
     init(interactor: LaunchesInteractorProtocol,
@@ -26,10 +27,12 @@ final class LaunchesPresenter: LaunchesPresenterProtocol {
     
     //MARK: - View Inpout and Outoput
     
+    var launches: Observable<[Launch]> { launchesSubject.asObserver() }
+    
     func viewDidLoad() {
         interactor.getLaunchesData()
-            .subscribe(onSuccess: { launches in
-                Log.log(launches)
-            }).disposed(by: disposeBag)
+            .asObservable()
+            .bind(to: launchesSubject)
+            .disposed(by: disposeBag)
     }
 }

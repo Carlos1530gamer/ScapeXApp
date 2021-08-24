@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class LaunchesViewController: UIViewController {
+final class LaunchesViewController: UIViewController, UITableViewDelegate {
     
+    private enum Constants {
+        static let kCellHeight: CGFloat = 200
+    }
+    
+    @IBOutlet private weak var tableView: UITableView!
+    private let disposeBag = DisposeBag()
     private let inputAndOutput: LaunchesViewInputAndOutputProtocol
     
     init(presenter: LaunchesViewInputAndOutputProtocol) {
@@ -23,7 +31,55 @@ class LaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        setupUI()
+        inputAndOutput.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    private func setupUI() {
+        self.view.backgroundColor = .black
+        setupNavigationBarUI()
+        navigationItem.title = LaunchesLocalizable.launchesTitle.localized()
+        setupTableView()
+        bindData()
+    }
+    
+    private func setupTableView() {
+        self.tableView.backgroundColor = .clear
+        self.tableView.delegate = self
+        self.tableView.separatorStyle = .none
+        self.tableView.register(UINib(nibName: LaunchCell.reuseIdentifier,
+                                      bundle: nil),
+                                forCellReuseIdentifier: LaunchCell.reuseIdentifier)
+    }
+    
+    private func bindData() {
+        inputAndOutput.launches
+            .bind(to: tableView.rx.items) {[weak self] table, row, item -> UITableViewCell in
+                guard let self = self,
+                      let launchCell = self.getCell(table: table, type: LaunchCell.self)
+                else { return UITableViewCell() }
+                launchCell.setup(with: item)
+                return launchCell
+            }.disposed(by: disposeBag)
+    }
+    
+    private func getCell<T: UITableViewCell>(table: UITableView, type: T.Type) -> T? {
+        table.dequeueReusableCell(withIdentifier: T.reuseIdentifier) as? T
+    }
+    
+    //MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        Constants.kCellHeight
+    }
 }

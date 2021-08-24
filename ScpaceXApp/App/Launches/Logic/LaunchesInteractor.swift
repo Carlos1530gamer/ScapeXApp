@@ -11,7 +11,7 @@ import RxSwift
 final class LaunchesInteractor: LaunchesInteractorProtocol {
     private let repository: ApolloDefaultImplementation = .init()
     
-    func getLaunchesData() -> Single<[Launches]> {
+    func getLaunchesData() -> Single<[Launch]> {
         repository
             .apolloClient
             .fetch(query: LaunchesQuery(),

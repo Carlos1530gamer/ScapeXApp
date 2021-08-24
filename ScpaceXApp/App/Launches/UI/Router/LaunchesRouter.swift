@@ -10,17 +10,16 @@ import UIKit.UIViewController
 import UIKit.UINavigationController
 
 final class LaunchesRouter: LaunchesRouterProtocol {
-    private var baseViewController: UIViewController?
-    private var navigation: UINavigationController? {
-        baseViewController as? UINavigationController
-    }
+    private var window: UIWindow?
     
-    init(baseViewController: UIViewController?) {
-        self.baseViewController = baseViewController
+    init(window: UIWindow?) {
+        self.window = window
     }
     
     func showLaunchesModule(presenter: LaunchesPresenterProtocol) {
         let view = LaunchesViewController(presenter: presenter)
-        navigation?.pushViewController(view, animated: true)
+        let navigation = UINavigationController(rootViewController: view)
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
     }
 }
