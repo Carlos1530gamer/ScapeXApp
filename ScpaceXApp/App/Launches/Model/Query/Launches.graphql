@@ -1,0 +1,16 @@
+query Launches {
+  launchesPast {
+    id
+    mission_id
+    mission_name
+    details
+    launch_date_unix
+    rocket {
+      rocket_name
+      rocket_type
+    }
+    links {
+      mission_patch
+    }
+  }
+}

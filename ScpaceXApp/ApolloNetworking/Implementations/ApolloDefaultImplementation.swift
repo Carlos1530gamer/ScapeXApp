@@ -12,8 +12,9 @@ import Apollo
 struct ApolloDefaultImplementation: ApolloNetworkingProtocol {
     var apolloClient: ApolloClient
     
-    init(apolloStore: ApolloStore = ApolloStore(cache: InMemoryNormalizedCache()),
-         provider: InterceptorProvider = AppDefaultInterceptorProvider()) {
+    init() {
+        let apolloStore: ApolloStore = ApolloStore(cache: InMemoryNormalizedCache())
+        let provider: InterceptorProvider = DefaultInterceptorProvider(store: apolloStore)
         let requestChainTransport = RequestChainNetworkTransport(interceptorProvider: provider,
                                                                  endpointURL: EnviromentVariables.baseApi)
         self.apolloClient = ApolloClient(networkTransport: requestChainTransport,
